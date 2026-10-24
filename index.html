@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>잠자는 Totoro | 숲의 낮잠 아카이브</title>
+<!-- Google Fonts: Quicksand & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=Quicksand:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with configuration -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed-variant": "#2f4e23",
+            "surface-container-high": "#f3e6da",
+            "on-primary": "#ffffff",
+            "secondary-fixed": "#ffdea6",
+            "surface-dim": "#e4d8cc",
+            "on-primary-fixed": "#042100",
+            "on-secondary-container": "#6f4f00",
+            "surface-bright": "#fff8f4",
+            "on-secondary-fixed-variant": "#5d4200",
+            "surface-container": "#f9ecdf",
+            "surface-container-highest": "#ede0d4",
+            "outline": "#73796e",
+            "primary": "#2c4c21",
+            "surface-container-lowest": "#ffffff",
+            "error-container": "#ffdad6",
+            "secondary-container": "#fcbf3f",
+            "surface-variant": "#ede0d4",
+            "on-tertiary-container": "#b6d7ff",
+            "on-surface-variant": "#43483f",
+            "tertiary-fixed-dim": "#9dcaff",
+            "outline-variant": "#c3c8bb",
+            "inverse-surface": "#362f27",
+            "surface-tint": "#466739",
+            "primary-fixed-dim": "#abd199",
+            "error": "#ba1a1a",
+            "tertiary": "#064675",
+            "on-primary-container": "#b9dfa6",
+            "primary-fixed": "#c7eeb3",
+            "on-tertiary-fixed": "#001d35",
+            "secondary-fixed-dim": "#f9bc3c",
+            "on-tertiary-fixed-variant": "#0d4978",
+            "on-error-container": "#93000a",
+            "on-error": "#ffffff",
+            "inverse-primary": "#abd199",
+            "primary-container": "#436436",
+            "on-secondary-fixed": "#271900",
+            "surface": "#fff8f4",
+            "secondary": "#7b5800",
+            "on-surface": "#211b13",
+            "inverse-on-surface": "#fcefe2",
+            "tertiary-fixed": "#d1e4ff",
+            "on-tertiary": "#ffffff",
+            "on-background": "#211b13",
+            "background": "#fff8f4",
+            "on-secondary": "#ffffff",
+            "tertiary-container": "#2b5e8e",
+            "surface-container-low": "#fff1e5"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "2rem",
+            "margin-sm": "1.25rem",
+            "gutter-sm": "1rem",
+            "margin-lg": "4rem",
+            "space-xl": "3rem",
+            "margin": "2rem",
+            "space-xs": "0.375rem",
+            "gutter": "1.5rem",
+            "space-md": "1.25rem",
+            "space-sm": "0.75rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "display-lg": ["Quicksand", "sans-serif"],
+            "body-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "label-sm": ["Quicksand", "sans-serif"],
+            "body-md": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-lg-mobile": ["Quicksand", "sans-serif"],
+            "headline-md": ["Quicksand", "sans-serif"],
+            "display-lg-mobile": ["Quicksand", "sans-serif"],
+            "label-md": ["Quicksand", "sans-serif"],
+            "label-lg": ["Quicksand", "sans-serif"],
+            "headline-sm": ["Quicksand", "sans-serif"],
+            "headline-lg": ["Quicksand", "sans-serif"]
+          },
+          "fontSize": {
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "display-lg": ["52px", { "lineHeight": "62px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "700" }],
+            "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+            "headline-md": ["26px", { "lineHeight": "34px", "fontWeight": "600" }],
+            "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "label-lg": ["15px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-lg": ["38px", { "lineHeight": "46px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-warm-shadow {
+      box-shadow: 0 10px 30px -10px rgba(67, 100, 54, 0.12), 0 2px 6px rgba(83, 75, 66, 0.05);
+    }
+    .custom-pill-shadow {
+      box-shadow: 0 4px 20px -2px rgba(67, 100, 54, 0.18);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- SHARED COMPONENT: TopNavBar -->
+<header class="docked full-width top-0 sticky z-50 bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<!-- Logo Anchor -->
+<a class="flex items-center gap-2 group" href="#">
+<span class="w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center text-primary group-hover:rotate-12 transition-all duration-300">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="nature">nature</span>
+</span>
+<span class="text-headline-sm font-headline-sm font-bold text-primary dark:text-inverse-primary tracking-tight">잠자는 Totoro</span>
+</a>
+<!-- Desktop Navigation Links (Intent Active: "숲의 이야기") -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-primary dark:text-inverse-primary font-bold border-b-2 border-primary dark:border-inverse-primary pb-1 text-label-md font-label-md" href="#forest-story">숲의 이야기</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-medium hover:text-primary dark:hover:text-inverse-primary transition-all duration-200 text-label-md font-label-md" href="#nap-spots">낮잠 명소</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-medium hover:text-primary dark:hover:text-inverse-primary transition-all duration-200 text-label-md font-label-md" href="#daily-rituals">토토로의 하루</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-medium hover:text-primary dark:hover:text-inverse-primary transition-all duration-200 text-label-md font-label-md" href="#sound-archive">굿즈 갤러리</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-medium hover:text-primary dark:hover:text-inverse-primary transition-all duration-200 text-label-md font-label-md" href="#warm-letters">따스한 편지</a>
+</nav>
+<!-- Trailing Icon Actions and Button -->
+<div class="flex items-center gap-3">
+<button aria-label="음소거 조절" class="w-10 h-10 rounded-full flex items-center justify-center text-primary hover:bg-surface-container-high transition-colors" id="lullabyToggle">
+<span class="material-symbols-outlined" data-icon="volume_up">volume_up</span>
+</button>
+<button aria-label="숲 탐방" class="w-10 h-10 rounded-full flex items-center justify-center text-primary hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined" data-icon="forest">forest</span>
+</button>
+<a class="hidden sm:inline-flex items-center gap-2 rounded-full bg-primary-container px-6 py-2.5 text-on-primary font-label-md text-label-md custom-pill-shadow hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200" href="#sound-archive">
+<span class="material-symbols-outlined text-sm" data-icon="music_note">music_note</span>
+<span>숲의 자장가 듣기</span>
+</a>
+</div>
+</div>
+</header>
+<main class="w-full overflow-hidden">
+<!-- SECTION 1: HERO (Forest Wildflower Meadow & Sleeping Totoro) -->
+<section class="relative pt-10 pb-20 md:py-24 px-6 max-w-7xl mx-auto" id="forest-story">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Left Column: Storybook Typography & Calls to Action -->
+<div class="lg:col-span-6 flex flex-col items-start gap-6 z-10">
+<!-- Delicate Meadow Badge -->
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-container/20 border border-secondary-container/40 text-on-secondary-container text-label-md font-label-md">
+<span class="material-symbols-outlined text-base" data-icon="local_florist">local_florist</span>
+<span>여름 햇살 아래 폭신한 들꽃 침대</span>
+</div>
+<div class="space-y-4">
+<h1 class="text-display-lg font-display-lg text-primary tracking-tight">
+              잠자는 <span class="text-secondary font-extrabold underline decoration-secondary-container decoration-4 underline-offset-8">totoro</span>
+</h1>
+<p class="text-headline-sm font-headline-sm text-primary-container">
+              햇살이 부서지는 꽃밭, 바람결에 살랑이는 낮잠의 숲
+            </p>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-xl">
+              발끝을 간지럽히는 미풍과 알록달록 야생화 사이로 규칙적인 숨소리가 들려옵니다. 
+              바쁜 하루는 잠시 나무 그늘에 내려두고, 포근한 토토로의 배 위에서 숲의 자장가에 귀 기울여보세요.
+            </p>
+</div>
+<!-- Hero Buttons -->
+<div class="flex flex-wrap items-center gap-4 pt-2 w-full sm:w-auto">
+<a class="rounded-full bg-primary-container text-on-primary px-7 py-3 font-label-lg text-label-lg inline-flex items-center justify-center gap-2 hover:-translate-y-0.5 custom-pill-shadow transition-all duration-200" href="#sound-archive">
+<span class="material-symbols-outlined text-lg" data-icon="music_note">music_note</span>
+<span>숲의 자장가 듣기 🎵</span>
+</a>
+<a class="rounded-full bg-secondary-container text-on-secondary-container px-7 py-3 font-label-lg text-label-lg inline-flex items-center justify-center gap-2 hover:-translate-y-0.5 hover:shadow-md transition-all duration-200" href="#nap-spots">
+<span class="material-symbols-outlined text-lg" data-icon="nest_cam_wired_stand">nest_cam_wired_stand</span>
+<span>낮잠 명소 둘러보기 🌱</span>
+</a>
+</div>
+<!-- Highlights Bar / Statistics -->
+<div class="w-full mt-4 p-5 rounded-2xl bg-surface-container-low border border-on-surface-variant/10 grid grid-cols-3 gap-4 text-center">
+<div class="space-y-1">
+<div class="text-headline-sm font-headline-sm text-primary font-bold">100%</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-xs text-primary" data-icon="spa">spa</span>
+                평화 지수
+              </div>
+</div>
+<div class="space-y-1 border-x border-on-surface-variant/10">
+<div class="text-headline-sm font-headline-sm text-primary font-bold">하루 14h</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-xs text-secondary" data-icon="bedtime">bedtime</span>
+                낮잠 시간
+              </div>
+</div>
+<div class="space-y-1">
+<div class="text-headline-sm font-headline-sm text-primary font-bold">1,000+</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-xs text-secondary-container" data-icon="eco">eco</span>
+                만족스러운 도토리
+              </div>
+</div>
+</div>
+</div>
+<!-- Right Column: Focal Image https://lh3.googleusercontent.com/aida-public/AB6AXuCm0Eaq0ssV3qqINl7NWYyrM8M4YSVWDiYKHHVk6mWzeG1GjpaM-kta13phyQZVnsrlZL1f1zBGOOd_MTirfwkiUhK8bDuHFJsErvltq_jwbQP67DJz_j0__T9OxfB3lxWgQEQMk7XVGjE64m5HDraMTjFNWEIKVy1BsCIHNyRxB3OXbBP2s6wdVtguyQ_iF7eIbSzKqyByiFD_uXYsj50U6oSMElVVa5RaN6rbMMOvK-DQK-sNI5UkDtd7uVPTR1bVNWY surrounded by poetic frame -->
+<div class="lg:col-span-6 relative flex justify-center items-center">
+<!-- Ambient Flower Blooms Behind -->
+<div class="absolute -top-10 -right-10 w-72 h-72 bg-secondary-container/20 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+<div class="absolute -bottom-10 -left-10 w-72 h-72 bg-primary-fixed/30 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+<!-- Organic Floating Image Card -->
+<div class="relative w-full max-w-md bg-surface-container-lowest p-4 md:p-6 rounded-3xl custom-warm-shadow border border-on-surface-variant/10 transition-all duration-300 hover:shadow-2xl">
+<!-- Floating Pill Badges -->
+<div class="absolute -top-4 -left-3 z-20 rounded-full bg-surface-container-lowest/95 backdrop-blur-md px-4 py-2 border border-on-surface-variant/10 shadow-sm flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
+<span class="text-label-sm font-label-sm text-primary font-bold">숲의 수호신 낮잠 중 💤</span>
+</div>
+<div class="absolute -bottom-4 -right-2 z-20 rounded-full bg-surface-container-lowest/95 backdrop-blur-md px-4 py-2 border border-on-surface-variant/10 shadow-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-secondary-fixed-dim" data-icon="nest_eco_leaf">nest_eco_leaf</span>
+<span class="text-label-sm font-label-sm text-on-surface font-semibold">새소리와 바람의 자장가</span>
+</div>
+<!-- The Sleeping Totoro Image Container -->
+<div class="relative rounded-2xl overflow-hidden aspect-[9/14] bg-surface-container-high group">
+<img alt="잠자는 토토로의 평화로운 모습" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCm0Eaq0ssV3qqINl7NWYyrM8M4YSVWDiYKHHVk6mWzeG1GjpaM-kta13phyQZVnsrlZL1f1zBGOOd_MTirfwkiUhK8bDuHFJsErvltq_jwbQP67DJz_j0__T9OxfB3lxWgQEQMk7XVGjE64m5HDraMTjFNWEIKVy1BsCIHNyRxB3OXbBP2s6wdVtguyQ_iF7eIbSzKqyByiFD_uXYsj50U6oSMElVVa5RaN6rbMMOvK-DQK-sNI5UkDtd7uVPTR1bVNWY"/>
+<!-- Dappled Sunlight Subtle Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-surface-bright/20 pointer-events-none"></div>
+<!-- Floating Gentle Flower Pin in corner -->
+<div class="absolute top-4 right-4 bg-surface-container-lowest/80 backdrop-blur-sm rounded-full p-2 text-secondary shadow-sm">
+<span class="material-symbols-outlined" data-icon="filter_vintage">filter_vintage</span>
+</div>
+</div>
+<div class="mt-4 text-center">
+<p class="text-label-sm font-label-sm text-outline tracking-wider">STUDIO GHIBLI INSPIRED COZY SANCTUARY</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: '토토로의 포근한 낮잠 스팟' (Cozy Nap Spots) -->
+<section class="py-20 px-6 max-w-7xl mx-auto" id="nap-spots">
+<div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-fixed/50 text-on-primary-fixed-variant text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-xs" data-icon="pin_drop">pin_drop</span>
+<span>SECRET RESTING SPOTS</span>
+</div>
+<h2 class="text-headline-lg font-headline-lg text-primary">토토로의 포근한 낮잠 스팟</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">
+          숲속 깊은 곳, 햇살의 각도와 나뭇잎의 사각거림이 완벽한 균형을 이루는 비밀 장소들을 만나보세요.
+        </p>
+</div>
+<!-- 3-Column Bento/Nap-Spot Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Spot 1: Wildflower Hill -->
+<article class="bg-surface-container-lowest rounded-3xl p-6 custom-warm-shadow border border-on-surface-variant/10 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300 group">
+<div>
+<div class="relative h-60 w-full rounded-2xl overflow-hidden mb-6 bg-surface-container-high">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A lush, dreamy meadow on a gentle hill filled with blooming forget-me-nots and buttercups under warm golden afternoon sunshine. Hand-painted anime aesthetic with soft rolling grass and delicate pollen drifting in the warm breeze." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUeiH1gYKr9o2H53ZgSLbeAwioOkaxf8nMhjrqVXj9A8j-FxgJ4zuU1TtLMvQ9w8tkX8Z7lFgHIXjhM7X6f1C07cD7WV3kHufhPX-fnin5q2dvVMZlZAbBbOZkFyZO2-lk9tJ8mO4bzDCLHfRZUwphfLLEv1kXs0eOEyJAFU3LBTuBUfAzlwlfgz9PqTo2zg3qBU7lR4wvO0qkgZxcArxysLhyrXoA2ABAGG5GnPcli7Cv0VTyZs85KQ"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1 rounded-full text-label-sm font-label-sm text-primary font-bold">
+                01. 들꽃 명당
+              </div>
+<div class="absolute bottom-3 right-3 bg-secondary-container px-2.5 py-0.5 rounded-full text-label-sm font-label-sm text-on-secondary-container font-semibold">
+                햇살 따스함 ★★★★★
+              </div>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-2">흐드러진 들꽃 언덕</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mb-6">
+              노란 미나리아재비와 파란 물망초가 끝없이 물결치는 곳. 양팔을 벌리고 누우면 은은한 꽃향기에 취해 3초 만에 단잠에 빠져듭니다.
+            </p>
+</div>
+<div class="pt-4 border-t border-on-surface-variant/10 flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-primary" data-icon="wb_sunny">wb_sunny</span>
+              오후 2시 추천
+            </span>
+<span class="text-primary font-label-md text-label-md flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              자리 잡기 <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</span>
+</div>
+</article>
+<!-- Spot 2: Camphor Tree Nook -->
+<article class="bg-surface-container-lowest rounded-3xl p-6 custom-warm-shadow border border-on-surface-variant/10 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300 group">
+<div>
+<div class="relative h-60 w-full rounded-2xl overflow-hidden mb-6 bg-surface-container-high">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="The mysterious interior of an ancient hollow camphor tree lined with velvety green moss and tiny glowing spirit orbs. Soft shafts of light filter through organic tree branches, casting magical shadows in Studio Ghibli inspired painterly style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAItXyO9BS7S_QOTHt44bafAU0fOCWWlUnfiMo8TY8yAwjXPTUJRddGZ8ARlC5Rm4MNBGd5tV2RlGHP5xUvHQYkjKcvvtF-4OfSk8RcvUhDMQHOihXgmyvD5DlQPw2PSBMf3dtGwHba0Ff8WTeXDd2PHWrGGyNdRqpMYJMjklBagb-noqTMkLGJXCzryBzZci8u9ezdSTLPiSCnUUm2eXa2MtxkSc_B9TvFQ7BYxBzHLJ7c2wu3cEwTZQ"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1 rounded-full text-label-sm font-label-sm text-primary font-bold">
+                02. 비밀 쉼터
+              </div>
+<div class="absolute bottom-3 right-3 bg-primary-fixed px-2.5 py-0.5 rounded-full text-label-sm font-label-sm text-on-primary-fixed-variant font-semibold">
+                피톤치드 가득
+              </div>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-2">천년 녹나무 비밀 구멍</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mb-6">
+              거대한 녹나무 뿌리 안쪽에 푹신한 벨벳 이끼 침대가 숨겨져 있습니다. 서늘하고 고요한 그늘 아래에서 깊은 사색과 숙면을 취하세요.
+            </p>
+</div>
+<div class="pt-4 border-t border-on-surface-variant/10 flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-primary" data-icon="dark_mode">dark_mode</span>
+              한낮의 피서 추천
+            </span>
+<span class="text-primary font-label-md text-label-md flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              구경하기 <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</span>
+</div>
+</article>
+<!-- Spot 3: Patter-Rain Bus Stop -->
+<article class="bg-surface-container-lowest rounded-3xl p-6 custom-warm-shadow border border-on-surface-variant/10 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300 group">
+<div>
+<div class="relative h-60 w-full rounded-2xl overflow-hidden mb-6 bg-surface-container-high">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A rustic countryside wooden bus stop surrounded by tall ferns and evening rain, a large green butterbur leaf used as a cozy umbrella. Warm lantern light glows softly against tranquil raindrops in a cinematic nostalgic anime atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA5Ch-Rjndf2r7DjEnH4QZCg0UHNehxq74AnERvRLh_9cRM1JUnUYaYyHTRSC7vTOrKifQC-QxG4gIl4soDU7TUOX7fxnRbVnjbfm_8qgglzt2jpiRqiZ7omBp-26S83Tt9_3EyDQ4C7n2g2Cnx2CVHZDn_70ldOXkIYk1oZe6A2p7WpG7Ebjsn43q8Bl6NQu6wrnstVME1-hB2VnBSINRqhxIKQvnS3_gjv_dzODplth1VPs2HtP6Bw"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1 rounded-full text-label-sm font-label-sm text-primary font-bold">
+                03. 비 오는 날의 낭만
+              </div>
+<div class="absolute bottom-3 right-3 bg-tertiary-fixed px-2.5 py-0.5 rounded-full text-label-sm font-label-sm text-on-tertiary-fixed-variant font-semibold">
+                빗소리 ASMR
+              </div>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-2">빗방울 토닥이는 버스 정류장</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mb-6">
+              머위 잎 우산 위로 떨어지는 빗방울 리듬을 벗 삼아 꾸벅꾸벅 조는 정류장 벤치. 고양이 버스를 기다리며 맞이하는 세상에서 가장 아늑한 낮잠입니다.
+            </p>
+</div>
+<div class="pt-4 border-t border-on-surface-variant/10 flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-tertiary" data-icon="rainy">rainy</span>
+              비 내리는 오후
+            </span>
+<span class="text-primary font-label-md text-label-md flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              정류장 가기 <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</span>
+</div>
+</article>
+</div>
+</section>
+<!-- SECTION 3: '숲속 주민들의 소소한 낮잠 팁' (Nap Rituals) -->
+<section class="py-20 bg-surface-container-low border-y border-on-surface-variant/5" id="daily-rituals">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+<div class="space-y-3">
+<span class="px-3.5 py-1 rounded-full bg-secondary-container/30 text-on-secondary-container text-label-sm font-label-sm inline-block">
+              DAILY HARMONY RITUALS
+            </span>
+<h2 class="text-headline-lg font-headline-lg text-primary">숲속 주민들의 소소한 낮잠 팁</h2>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-xl">
+              작은 토토로부터 숲의 요정 검둥이 먼지까지, 깊고 맑은 잠을 이루기 위해 매일 지키는 소박한 의식들을 소개합니다.
+            </p>
+</div>
+<div class="hidden md:flex items-center gap-2">
+<span class="text-label-md font-label-md text-primary-container">기분 좋은 수면 주기 지키기</span>
+<span class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="eco">eco</span>
+</span>
+</div>
+</div>
+<!-- Interactive Glassmorphic Ritual Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Ritual 1 -->
+<div class="bg-surface-container-lowest/80 backdrop-blur-md p-8 rounded-3xl border border-on-surface-variant/10 custom-warm-shadow hover:bg-surface-container-lowest transition-all duration-300">
+<div class="w-14 h-14 rounded-2xl bg-secondary-fixed/50 flex items-center justify-center text-secondary mb-6">
+<span class="material-symbols-outlined text-3xl" data-icon="emoji_food_beverage">emoji_food_beverage</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-3">도토리 차 한 잔 🍵</h3>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+              가을 햇볕에 바짝 말린 참나무 도토리를 덖어 우려낸 따스한 차 한 잔. 몸을 안쪽부터 포근하게 덥혀 긴장을 사르르 풀어줍니다.
+            </p>
+<div class="mt-6 flex items-center gap-2 text-label-sm font-label-sm text-secondary font-bold">
+<span>준비물: 말린 도토리 세 알</span>
+</div>
+</div>
+<!-- Ritual 2 -->
+<div class="bg-surface-container-lowest/80 backdrop-blur-md p-8 rounded-3xl border border-on-surface-variant/10 custom-warm-shadow hover:bg-surface-container-lowest transition-all duration-300">
+<div class="w-14 h-14 rounded-2xl bg-primary-fixed/50 flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-3xl" data-icon="air">air</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-3">바람의 소리 ASMR 🍃</h3>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+              떡갈나무 잎맥 사이로 부는 북풍과 남풍의 하모니. 눈을 감고 귀끝을 쫑긋 세우면 숲 전체가 부르는 자장가가 마음을 토닥입니다.
+            </p>
+<div class="mt-6 flex items-center gap-2 text-label-sm font-label-sm text-primary font-bold">
+<span>효과: 잡생각 0% 도달</span>
+</div>
+</div>
+<!-- Ritual 3 -->
+<div class="bg-surface-container-lowest/80 backdrop-blur-md p-8 rounded-3xl border border-on-surface-variant/10 custom-warm-shadow hover:bg-surface-container-lowest transition-all duration-300">
+<div class="w-14 h-14 rounded-2xl bg-tertiary-fixed/60 flex items-center justify-center text-tertiary mb-6">
+<span class="material-symbols-outlined text-3xl" data-icon="airline_seat_flat">airline_seat_flat</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-primary mb-3">푹신한 배 위 꿀잠 ☁️</h3>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+              토토로의 부드러운 털 속에 파묻혀 숨 쉴 때마다 오르내리는 둥근 배의 파도에 몸을 맡깁니다. 세상에서 가장 안전하고 편안한 요람.
+            </p>
+<div class="mt-6 flex items-center gap-2 text-label-sm font-label-sm text-tertiary font-bold">
+<span>만족도: 기적의 10분 수면</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: '토토로와 함께하는 포근한 소리 아카이브' (Forest Soundscape Player) -->
+<section class="py-20 px-6 max-w-7xl mx-auto" id="sound-archive">
+<div class="bg-surface-container rounded-3xl p-8 md:p-14 border border-on-surface-variant/10 custom-warm-shadow relative overflow-hidden">
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+<div class="lg:col-span-5 space-y-5">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/40 text-on-secondary-container text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-xs" data-icon="graphic_eq">graphic_eq</span>
+<span>FOREST SOUNDSCAPE PLAYER</span>
+</div>
+<h2 class="text-headline-lg font-headline-lg text-primary">
+              토토로와 함께하는<br/>포근한 소리 아카이브
+            </h2>
+<p class="text-body-md font-body-md text-on-surface-variant">
+              잠시 눈을 감고 재생 버튼을 눌러보세요. 나뭇가지 사이를 스치는 산들바람과 또르르 굴러가는 도토리의 맑은 소리가 귓가에 맴돕니다.
+            </p>
+<div class="p-4 rounded-2xl bg-surface-container-lowest/80 border border-on-surface-variant/10 flex items-center gap-4">
+<button class="w-12 h-12 rounded-full bg-primary-container text-on-primary flex items-center justify-center hover:scale-105 transition-transform" id="masterPlayBtn">
+<span class="material-symbols-outlined text-2xl" data-icon="play_arrow">play_arrow</span>
+</button>
+<div>
+<div class="text-label-md font-label-md text-primary font-bold">지금 재생 중: 여름 숲의 산들바람</div>
+<div class="text-label-sm font-label-sm text-outline">자연 앰비언스 • 432Hz 평온한 파동</div>
+</div>
+</div>
+</div>
+<!-- Sound Tracks List -->
+<div class="lg:col-span-7 space-y-4">
+<!-- Track 1 -->
+<div class="p-5 rounded-2xl bg-surface-container-lowest border border-primary/20 flex items-center justify-between hover:bg-surface-bright transition-colors shadow-sm cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed/40 flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="air">air</span>
+</div>
+<div>
+<h4 class="text-label-lg font-label-lg text-primary font-bold">여름 숲의 산들바람</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">잎사귀 부딪히는 소리와 먼 산새 지저귐</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-label-sm font-label-sm text-outline">18:24</span>
+<button class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined text-base" data-icon="play_arrow">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Track 2 -->
+<div class="p-5 rounded-2xl bg-surface-container-lowest border border-on-surface-variant/10 flex items-center justify-between hover:bg-surface-bright transition-colors shadow-sm cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed/40 flex items-center justify-center text-tertiary group-hover:bg-tertiary-container group-hover:text-on-tertiary transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="water_drop">water_drop</span>
+</div>
+<div>
+<h4 class="text-label-lg font-label-lg text-primary font-bold">봄꽃 위 빗소리</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">촉촉하게 적셔주는 꽃잎 위 토닥임</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-label-sm font-label-sm text-outline">24:10</span>
+<button class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined text-base" data-icon="play_arrow">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Track 3 -->
+<div class="p-5 rounded-2xl bg-surface-container-lowest border border-on-surface-variant/10 flex items-center justify-between hover:bg-surface-bright transition-colors shadow-sm cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed/50 flex items-center justify-center text-secondary group-hover:bg-secondary-container group-hover:text-on-secondary-container transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="adjust">adjust</span>
+</div>
+<div>
+<h4 class="text-label-lg font-label-lg text-primary font-bold">도토리 굴러가는 소리</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">오솔길 돌멩이와 마주치는 명랑한 울림</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-label-sm font-label-sm text-outline">12:05</span>
+<button class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined text-base" data-icon="play_arrow">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: '토토로에게 띄우는 따스한 편지' (Leave a warm note) -->
+<section class="py-20 px-6 max-w-7xl mx-auto" id="warm-letters">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Left: Form to Leave a Note -->
+<div class="lg:col-span-5 bg-surface-container-lowest p-8 md:p-10 rounded-3xl custom-warm-shadow border border-on-surface-variant/10">
+<div class="space-y-3 mb-6">
+<span class="px-3 py-1 rounded-full bg-primary-fixed/40 text-on-primary-fixed-variant text-label-sm font-label-sm inline-block">
+              FOREST POST BOX
+            </span>
+<h2 class="text-headline-md font-headline-md text-primary">토토로에게 띄우는 따스한 편지</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">
+              쿨쿨 잠든 토토로의 귓가에 닿을 소중한 꿈과 바람을 나뭇잎 엽서에 적어 보내주세요.
+            </p>
+</div>
+<form class="space-y-4" id="noteForm" onsubmit="event.preventDefault(); alert('토토로의 이끼 우체통에 편지가 살포시 도착했습니다 🍃');">
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-1.5" for="senderName">보내는 친구의 이름</label>
+<input class="w-full rounded-2xl bg-surface-container-low border border-transparent focus:border-primary focus:ring-2 focus:ring-primary/20 px-4 py-3 text-body-md font-body-md text-on-surface transition-all placeholder:text-outline" id="senderName" placeholder="예: 숲길을 걷던 나그네" required="" type="text"/>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-1.5" for="noteMessage">따뜻한 이야기 또는 자장가 말한마디</label>
+<textarea class="w-full rounded-2xl bg-surface-container-low border border-transparent focus:border-primary focus:ring-2 focus:ring-primary/20 p-4 text-body-md font-body-md text-on-surface transition-all placeholder:text-outline" id="noteMessage" placeholder="토토로야, 오늘도 행복한 꿈만 꾸렴! 도토리 가득 모아둘게..." required="" rows="4"></textarea>
+</div>
+<button class="w-full rounded-full bg-primary-container text-on-primary py-3.5 px-6 font-label-lg text-label-lg custom-pill-shadow hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2" type="submit">
+<span class="material-symbols-outlined text-lg" data-icon="send">send</span>
+<span>나뭇잎 우체통에 넣기</span>
+</button>
+</form>
+</div>
+<!-- Right: Recent Letters from Forest Friends -->
+<div class="lg:col-span-7 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-headline-sm font-headline-sm text-primary">숲속 친구들의 최근 편지</h3>
+<span class="text-label-sm font-label-sm text-outline">최근 도착한 3통의 엽서</span>
+</div>
+<div class="space-y-4">
+<!-- Note 1: Satsuki -->
+<div class="p-5 rounded-2xl bg-surface-container-low border border-on-surface-variant/10 flex items-start gap-4 hover:bg-surface-container transition-colors">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed/50 flex-shrink-0 flex items-center justify-center text-secondary font-bold text-sm">
+                  사
+                </div>
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="text-label-md font-label-md text-primary font-bold">사츠키</span>
+<span class="text-label-sm font-label-sm text-outline">오늘 아침</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant">
+                    "토토로! 메이가 찾은 작고 반짝이는 도토리를 집 앞 화단에 꼭꼭 심어두었어. 비가 오면 쑥쑥 자라나게 함께 응원해 줘!"
+                  </p>
+</div>
+</div>
+<!-- Note 2: Mei -->
+<div class="p-5 rounded-2xl bg-surface-container-low border border-on-surface-variant/10 flex items-start gap-4 hover:bg-surface-container transition-colors">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex-shrink-0 flex items-center justify-center text-primary font-bold text-sm">
+                  메
+                </div>
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="text-label-md font-label-md text-primary font-bold">메이</span>
+<span class="text-label-sm font-label-sm text-outline">어제 오후</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant">
+                    "토토로 배는 구름보다 백 배 더 푹신해! 쿨쿨 잠자는 코에 민들레 꽃씨 후 불어넣을 거야~ 히히."
+                  </p>
+</div>
+</div>
+<!-- Note 3: Little Chibi Totoro -->
+<div class="p-5 rounded-2xl bg-surface-container-low border border-on-surface-variant/10 flex items-start gap-4 hover:bg-surface-container transition-colors">
+<div class="w-10 h-10 rounded-full bg-primary-fixed/60 flex-shrink-0 flex items-center justify-center text-primary font-bold text-sm">
+                  꼬
+                </div>
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="text-label-md font-label-md text-primary font-bold">꼬마 토토로</span>
+<span class="text-label-sm font-label-sm text-outline">그저께</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant">
+                    "바스락바스락... 풀숲 뒤에서 제일 크고 통통한 도토리 열 개를 찾았습니다. 큰 토토로 발치에 곱게 놓아두었어요."
+                  </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Forest Blessing Stamp -->
+<div class="mt-8 p-4 rounded-2xl bg-surface-bright border border-dashed border-primary/30 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="mark_email_read">mark_email_read</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">이곳에 적힌 모든 따스한 마음은 숲의 바람이 토토로의 꿈으로 전달합니다.</span>
+</div>
+<span class="text-label-sm font-label-sm text-primary font-bold whitespace-nowrap">숲의 공식 우체국</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- SHARED COMPONENT: Footer -->
+<footer class="docked full-width relative bg-surface-container-low dark:bg-inverse-surface border-t-0">
+<div class="w-full py-12 px-6 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<!-- Brand & Copyright -->
+<div class="space-y-2 text-center md:text-left">
+<div class="text-headline-sm font-headline-sm font-bold text-primary dark:text-inverse-primary flex items-center justify-center md:justify-start gap-2">
+<span class="material-symbols-outlined text-xl" data-icon="forest">forest</span>
+<span>잠자는 Totoro</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant dark:text-outline-variant">
+          © 2025 숲의 비밀과 잠자는 토토로. All gentle spirits welcome.
+        </p>
+</div>
+<!-- Footer Navigation Links -->
+<nav class="flex flex-wrap items-center justify-center gap-6 text-label-sm font-label-sm">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">숲의 약속</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">개인정보 보호</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">바람의 소리 아카이브</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">문의하기</a>
+</nav>
+</div>
+</footer>
+<!-- Micro-interaction JS for Soundscape Toggle & UI Flourishes -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const lullabyBtn = document.getElementById('lullabyToggle');
+      const masterPlay = document.getElementById('masterPlayBtn');
+      let isPlaying = false;
+
+      function toggleLullaby() {
+        isPlaying = !isPlaying;
+        const icon = isPlaying ? 'pause' : 'play_arrow';
+        if (masterPlay) {
+          masterPlay.innerHTML = `<span class="material-symbols-outlined text-2xl">${icon}</span>`;
+        }
+        if (lullabyBtn) {
+          lullabyBtn.innerHTML = `<span class="material-symbols-outlined">${isPlaying ? 'volume_off' : 'volume_up'}</span>`;
+        }
+      }
+
+      if (lullabyBtn) lullabyBtn.addEventListener('click', toggleLullaby);
+      if (masterPlay) masterPlay.addEventListener('click', toggleLullaby);
+    });
+  </script>
+</body></html>
